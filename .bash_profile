@@ -1,9 +1,3 @@
-.bash_history                 .bash_profile-anaconda3.bak   .bash_sessions/
-.bash_profile                 .bash_profile-miniconda3.bak  .bashrc
-(base) brandomiranda~ $ cat .bash
-.bash_history                 .bash_profile-anaconda3.bak   .bash_sessions/
-.bash_profile                 .bash_profile-miniconda3.bak  .bashrc
-(base) brandomiranda~ $ cat .bash_profile
 if [ -f ~/.bashrc ]; then
    source ~/.bashrc
 fi
