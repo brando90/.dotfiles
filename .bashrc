@@ -23,16 +23,16 @@ export PS1="\[$LIGHT_GREY\]\u\[$LIGHT_PURPLE\]\w\[$LIGHT_GREY\] \$ \[$LIGHT_CYAN
 LS_COLORS='di=1:fi=96:*.m=31:*.py=32:*.txt=36:*.out=35'
 export LS_COLORS
 
-source jump-module.bash
+#source jump-module.bash
 
-completemarks() {
-  local curw=${COMP_WORDS[COMP_CWORD]}
-  local wordlist=$(find $MARKPATH -type l -printf "%f\n")
-  COMPREPLY=($(compgen -W '${wordlist[@]}' -- "$curw"))
-  return 0
-}
+#completemarks() {
+#  local curw=${COMP_WORDS[COMP_CWORD]}
+#  local wordlist=$(find $MARKPATH -type l -printf "%f\n")
+#  COMPREPLY=($(compgen -W '${wordlist[@]}' -- "$curw"))
+#  return 0
+#}
 
-complete -F _completemarks jump unmark
+#complete -F _completemarks jump unmark
 
 export PATH="$PATH:$HOME/bin"\
 # add maude
@@ -48,4 +48,4 @@ alias tcoq="/Users/brandomiranda/home_simulation_research/gamepad/tcoq/bin/coqc"
 export PATH=/usr/local/opt/ruby/bin:$PATH
 export PATH=$HOME/.gem/ruby/2.6.0/bin:$PATH
 
-conda activate atp
+#conda activate atp
