@@ -42,3 +42,6 @@ alias grep='grep --color=auto'
 alias intel='ssh -i ~/.ssh/intel_id_rsa miranda9@ssh-iam.intel-research.net'
 alias hal='ssh miranda9@hal.ncsa.illinois.edu'
 alias vision='ssh miranda9@vision-sched.cs.illinois.edu'
+
+# for running tbb seaminglessly, see https://github.com/brando90/ultimate-utils
+alias tbb='sh /Users/brando/ultimate-utils/run_tb.sh'
