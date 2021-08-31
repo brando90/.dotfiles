@@ -33,8 +33,8 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-#conda activate automl-meta-learning-py3.7
-conda activate automl-meta-learning
+#conda activate metalearning
+conda activate synthesis
 export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 
 ## Aliases
@@ -42,6 +42,9 @@ alias grep='grep --color=auto'
 alias intel='ssh -i ~/.ssh/intel_id_rsa miranda9@ssh-iam.intel-research.net'
 alias hal='ssh miranda9@hal.ncsa.illinois.edu'
 alias vision='ssh miranda9@vision-sched.cs.illinois.edu'
+alias nano='ssh miranda9@nano.ncsa.illinois.edu'
+alias dgx='ssh miranda9@hal-dgx.ncsa.illinois.edu'
+alias sshcc='ssh miranda9@cc-login.campuscluster.illinois.edu'
 
-# for running tbb seaminglessly, see https://github.com/brando90/ultimate-utils
-alias tbb="sh ${HOME}/ultimate-utils/run_tb.sh"
+#alias tb='tensorboard --logdir'
+alias tbb='sh /Users/brando/ultimate-utils/run_tb.sh'
