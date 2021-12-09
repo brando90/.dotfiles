@@ -41,7 +41,7 @@ export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 alias grep='grep --color=auto'
 alias intel='ssh -i ~/.ssh/intel_id_rsa miranda9@ssh-iam.intel-research.net'
 alias hal='ssh miranda9@hal.ncsa.illinois.edu'
-alias vision='ssh miranda9@vision-sched.cs.illinois.edu'
+alias vision='ssh miranda9@vision-submit.cs.illinois.edu'
 alias nano='ssh miranda9@nano.ncsa.illinois.edu'
 alias dgx='ssh miranda9@hal-dgx.ncsa.illinois.edu'
 alias sshcc='ssh miranda9@cc-login.campuscluster.illinois.edu'
