@@ -48,3 +48,5 @@ alias sshcc='ssh miranda9@cc-login.campuscluster.illinois.edu'
 
 #alias tb='tensorboard --logdir'
 alias tbb='sh /Users/brando/ultimate-utils/run_tb.sh'
+
+export WANDB_API_KEY=PUT_REAL_VALUR_HERE
