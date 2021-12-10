@@ -30,3 +30,15 @@ My original mac had this path variable:
 /Library/Frameworks/Python.framework/Versions/3.8/bin:/Users/brandomiranda/miniconda3/bin:/Users/brandomiranda/.pyenv/shims:/Users/brandomiranda/.pyenv/bin:/Users/brandomiranda/anaconda3/bin:/Users/brandomiranda/.opam/4.07.0/bin:/Users/brandomiranda/.gem/ruby/2.6.0/bin:/usr/local/opt/ruby/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/brandomiranda/opt/anaconda3/bin:/Users/brandomiranda/opt/anaconda3/condabin:/Users/brandomiranda/bin#:/Users/brandomiranda/bin/Maude-2.7.1-osx
 ```
 to reset PATH variable see: https://superuser.com/questions/121870/how-do-i-reset-the-path-variable-on-mac-os-x
+
+To reset PATH do:
+```
+PATH=/usr/bin:/bin:/usr/sbin:/sbin
+export PATH
+
+# add custom, local installations to PATH
+PATH=/usr/local/bin:/usr/local/sbin:"$PATH"
+
+# add MacPorts to PATH
+PATH=/opt/local/bin:/opt/local/sbin:"$PATH"
+```
