@@ -1,3 +1,8 @@
+# In my 2013 mac this seems to be needed (reset PATH to a new virgin one)
+PATH=/usr/bin:/bin:/usr/sbin:/sbin
+export PATH
+export PATH=/opt/homebrew/bin:$PATH
+
 # let zplug manage itself
 zplug "zplug/zplug"
 
@@ -18,24 +23,9 @@ PROMPT="%B%F{magenta}%n%B%F{red}%~%B%F{green} %F{cyan}❯%f "
 
 ## jump TODO: switch to zsh's wd
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/brando/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/brando/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/brando/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/brando/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
 #conda activate metalearning
-conda activate synthesis
-export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
+# conda activate synthesis
+conda activate meta_learning
 
 ## Aliases
 alias grep='grep --color=auto'
@@ -47,6 +37,22 @@ alias dgx='ssh miranda9@hal-dgx.ncsa.illinois.edu'
 alias sshcc='ssh miranda9@cc-login.campuscluster.illinois.edu'
 
 #alias tb='tensorboard --logdir'
-alias tbb='sh /Users/brando/ultimate-utils/run_tb.sh'
+#alias tbb='sh /Users/brando/ultimate-utils/run_tb.sh'
+alias tbb="sh ${HOME}/ultimate-utils/sh_files_repo/run_tb.sh"
 
-export WANDB_API_KEY=PUT_REAL_VALUR_HERE
+export WANDB_API_KEY=d0786f654d1435e61174a1db25d88c0cdcd6f96d
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/brandomiranda/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/brandomiranda/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/brandomiranda/opt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/brandomiranda/opt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
