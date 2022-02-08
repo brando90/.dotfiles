@@ -40,7 +40,7 @@ alias sshcc='ssh miranda9@cc-login.campuscluster.illinois.edu'
 #alias tbb='sh /Users/brando/ultimate-utils/run_tb.sh'
 alias tbb="sh ${HOME}/ultimate-utils/sh_files_repo/run_tb.sh"
 
-export WANDB_API_KEY=d0786f654d1435e61174a1db25d88c0cdcd6f96d
+export WANDB_API_KEY=WANDB_SECRET
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
