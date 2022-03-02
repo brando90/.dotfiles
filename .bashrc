@@ -1,5 +1,3 @@
-pip install wandb --upgrade
-
 BLACK='\e[0;30m'
 RED='\e[0;31m'
 GREEN='\e[0;32m'
@@ -35,3 +33,5 @@ export DOCKER_ID_USER='brandojazz'
 
 
 conda activate automl
+
+pip install wandb --upgrade
