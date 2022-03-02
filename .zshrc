@@ -1,4 +1,3 @@
-pip install wandb --upgrade
 
 # In my 2013 mac this seems to be needed (reset PATH to a new virgin one)
 PATH=/usr/bin:/bin:/usr/sbin:/sbin
@@ -58,3 +57,5 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+pip install wandb --upgrade
