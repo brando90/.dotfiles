@@ -1,4 +1,3 @@
-
 # In my 2013 mac this seems to be needed (reset PATH to a new virgin one)
 PATH=/usr/bin:/bin:/usr/sbin:/sbin
 export PATH
@@ -24,9 +23,6 @@ PROMPT="%B%F{magenta}%n%B%F{red}%~%B%F{green} %F{cyan}❯%f "
 
 ## jump TODO: switch to zsh's wd
 
-#conda activate metalearning
-# conda activate synthesis
-conda activate meta_learning
 
 ## Aliases
 alias grep='grep --color=auto'
@@ -41,7 +37,7 @@ alias sshcc='ssh miranda9@cc-login.campuscluster.illinois.edu'
 #alias tbb='sh /Users/brando/ultimate-utils/run_tb.sh'
 alias tbb="sh ${HOME}/ultimate-utils/sh_files_repo/run_tb.sh"
 
-export WANDB_API_KEY=WANDB_SECRET
+export WANDB_API_KEY=f4d36d707688d10c9b832614fbb24de04febe8da
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -57,5 +53,12 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
+
+# opam configuration
+[[ ! -r /Users/brandomiranda/.opam/opam-init/init.zsh ]] || source /Users/brandomiranda/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+
+#conda activate metalearning
+# conda activate synthesis
+conda activate meta_learning
 
 pip install wandb --upgrade
