@@ -3,7 +3,7 @@ PATH=/usr/bin:/bin:/usr/sbin:/sbin
 export PATH
 export PATH=/opt/homebrew/bin:$PATH
 
-# added this for docker
+# added this for docker, https://stackoverflow.com/a/71876799/1601580 export is so all process also have this
 export PATH="/usr/local/bin:$PATH"
 
 # let zplug manage itself
