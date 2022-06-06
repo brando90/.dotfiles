@@ -42,3 +42,8 @@ PATH=/usr/local/bin:/usr/local/sbin:"$PATH"
 # add MacPorts to PATH
 PATH=/opt/local/bin:/opt/local/sbin:"$PATH"
 ```
+
+
+## PyCharm settings
+
+private repo: https://github.com/brando90/pycharm-settings-brando/
