@@ -43,8 +43,6 @@ alias sshcc='ssh miranda9@cc-login.campuscluster.illinois.edu'
 #alias tbb='sh /Users/brando/ultimate-utils/run_tb.sh'
 alias tbb="sh ${HOME}/ultimate-utils/sh_files_repo/run_tb.sh"
 
-export WANDB_API_KEY=SECRET
-
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/Users/brandomiranda/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -67,4 +65,6 @@ unset __conda_setup
 # conda activate synthesis
 conda activate meta_learning
 
+# Wandb
+export WANDB_API_KEY=SECRET
 pip install wandb --upgrade
