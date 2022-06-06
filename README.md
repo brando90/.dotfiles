@@ -46,4 +46,4 @@ PATH=/opt/local/bin:/opt/local/sbin:"$PATH"
 
 ## PyCharm settings
 
-private repo: https://github.com/brando90/pycharm-settings-brando/
+private repo: [https://github.com/brando90/pycharm-settings-brando/](https://github.com/brando90/pycharm-settings-brando-internships)
