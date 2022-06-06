@@ -3,6 +3,9 @@ PATH=/usr/bin:/bin:/usr/sbin:/sbin
 export PATH
 export PATH=/opt/homebrew/bin:$PATH
 
+# run bach profile...weird we need this? but perhaps opam and conda install things there without me knowing? https://stackoverflow.com/questions/31615322/zsh-conda-pip-installs-command-not-found
+source ~/.bash_profile
+
 # added this for docker, https://stackoverflow.com/a/71876799/1601580 export is so all process also have this
 export PATH="/usr/local/bin:$PATH"
 
@@ -40,7 +43,7 @@ alias sshcc='ssh miranda9@cc-login.campuscluster.illinois.edu'
 #alias tbb='sh /Users/brando/ultimate-utils/run_tb.sh'
 alias tbb="sh ${HOME}/ultimate-utils/sh_files_repo/run_tb.sh"
 
-export WANDB_API_KEY=f4d36d707688d10c9b832614fbb24de04febe8da
+export WANDB_API_KEY=SECRET
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
