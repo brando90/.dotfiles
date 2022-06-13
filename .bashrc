@@ -1,3 +1,5 @@
+source ~/.bash_profile
+
 BLACK='\e[0;30m'
 RED='\e[0;31m'
 GREEN='\e[0;32m'
