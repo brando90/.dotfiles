@@ -1,4 +1,4 @@
-source ~/.bash_profile
+# source ~/.bash_profile
 
 BLACK='\e[0;30m'
 RED='\e[0;31m'
