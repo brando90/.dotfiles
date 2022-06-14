@@ -1,11 +1,8 @@
 # .bashrc
 
-# added since opam said to me: [NOTE] Make sure that ~/.bash_profile is well sourced in your ~/.bashrc. in ccc
-source ~/.bash_profile
-
 # Source global definitions
 if [ -f /etc/bashrc ]; then
-        . /etc/bashrc
+	. /etc/bashrc
 fi
 
 # User specific environment
