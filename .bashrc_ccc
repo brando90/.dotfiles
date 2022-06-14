@@ -38,7 +38,7 @@ BACK_DEFAULT_COLOR='\e[m'
 
 # default ccc ps1 prompt: export PS1="[\u@\h \W]\$"
 # export PS1="\[$LIGHT_GREY\]\u\[$LIGHT_PURPLE\]\W\[$LIGHT_GREY\] \$ \[$LIGHT_CYAN\]"
-export PS1="\[$LIGHT_PURPLE\][\u@\h \W]\$\[$LIGHT_GREY\] "
+export PS1="\[$LIGHT_CYAN\][\u@\h \W]\$\[$LIGHT_GREY\] "
 
 #http://linux-sxs.org/housekeeping/lscolors.html
 LS_COLORS='di=1:fi=96:*.m=31:*.py=32:*.txt=36:*.out=35'
