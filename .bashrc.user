@@ -4,7 +4,8 @@
 cd /dfs/scratch0/brando9
 export HOME=/dfs/scratch0/brando9
 export TEMP=$HOME
-export WANDB_DIR=$HOME
+export AFS=/afs/cs.stanford.edu/u/brando9
+alias afs='cd $AFS'
 
 # prompt colours
 BLACK='\e[0;30m'
@@ -50,10 +51,9 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-module load gcc/9.2.0
-
+#module load gcc/9.2.0
 #module load cuda-toolkit/10.2
-module load cuda-toolkit/11.1
+#module load cuda-toolkit/11.1
 source cuda11.1
 
 export PATH=$PATH:$HOME/my_bins
@@ -65,4 +65,4 @@ export WANDB_API_KEY=SECRET
 
 # SNAP
 export LOCAL_MACHINE_PWD=$(python -c "import uutils; uutils.get_home_pwd_local_machine_snap()")
-export WANDB_DIR=LOCAL_MACHINE_PWD
+export WANDB_DIR=$LOCAL_MACHINE_PWD
