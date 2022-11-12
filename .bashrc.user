@@ -56,9 +56,19 @@ unset __conda_setup
 #module load cuda-toolkit/11.1
 source cuda11.1
 
+#export PATH=$PATH:$AFS/my_bins
+#export PATH="$AFS/miniconda/bin:$PATH"
+#source $AFS/miniconda/bin/activate
+#conda activate metalearning_gpu
+
+#export PATH=$PATH:$HOME/my_bins
+#export PATH="$HOME/miniconda/bin:$PATH"
+#source ~/miniconda/bin/activate
+#conda activate metalearning_gpu
+
 export PATH=$PATH:$HOME/my_bins
-export PATH="$HOME/miniconda/bin:$PATH"
-source ~/miniconda/bin/activate
+export PATH="$HOME/anaconda/bin:$PATH"
+source ~/anaconda/bin/activate
 conda activate metalearning_gpu
 
 export WANDB_API_KEY=SECRET
