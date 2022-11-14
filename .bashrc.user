@@ -72,6 +72,7 @@ source ~/anaconda/bin/activate
 conda activate metalearning_gpu
 
 export WANDB_API_KEY=secret
+export SU_PASSWORD=secret
 
 # SNAP
 # export LOCAL_MACHINE_PWD=$(python -c "import uutils; uutils.get_home_pwd_local_machine_snap()")
