@@ -71,11 +71,22 @@ export PATH="$HOME/anaconda/bin:$PATH"
 source ~/anaconda/bin/activate
 conda activate metalearning_gpu
 
-export WANDB_API_KEY=secret
-export SU_PASSWORD=secret
+export WANDB_API_KEY=asdfadf
+export SU_PASSWORD=adsfadsf
 
 # SNAP
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+export PATH="$HOME/.ruby-build/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+
+# opam configuration
+test -r /dfs/scratch0/brando9/.opam/opam-init/init.sh && . /dfs/scratch0/brando9/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
+eval $(opam env)
+
 # export LOCAL_MACHINE_PWD=$(python -c "import uutils; uutils.get_home_pwd_local_machine_snap()")
 export HOSTNAME=$(hostname)
 export LOCAL_MACHINE_PWD="/lfs/${HOSTNAME::-13}/0/brando9"
 export WANDB_DIR=$LOCAL_MACHINE_PWD
+
+#tr ':' '\n' <<< "$PATH"
