@@ -82,8 +82,8 @@ export SU_PASSWORD=secret
 # test -r /dfs/scratch0/brando9/.opam/opam-init/init.sh && . /dfs/scratch0/brando9/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
 export PATH="$HOME/.local/bin:$PATH"
 eval $(opam env)
-opam init --disable-sandboxing
-opam update --all
+#opam init --disable-sandboxing
+#opam update --all
 eval $(opam env)
 
 # - link git repos to local lfs
