@@ -5,6 +5,7 @@ cd /dfs/scratch0/brando9
 export HOME=/dfs/scratch0/brando9
 export TEMP=$HOME
 export AFS=/afs/cs.stanford.edu/u/brando9
+export DFS=/dfs/scratch0/brando9/
 alias afs='cd $AFS'
 
 # prompt colours
