@@ -1,12 +1,12 @@
 # .bashrc
 
-# - use local machine as home
+# - use local machine as home, can't start with cd because like in .bashrc.user since we need to figure out local path in lfs
+#export HOSTNAME=$(hostname)
+#export LOCAL_MACHINE_PWD="/lfs/${HOSTNAME::-13}/0/brando9"
 export LOCAL_MACHINE_PWD=$(python3 -c "import socket;hostname=socket.gethostname().split('.')[0];print(f'/lfs/{hostname}/0/brando9');")
 mkdir -p $LOCAL_MACHINE_PWD
-export WANDB_DIR=$LOCAL_MACHINE_PWD
-export HOME=$LOCAL_MACHINE_PWD
 
-# - set up afs short cuts
+export HOME=$LOCAL_MACHINE_PWD
 cd $HOME
 export TEMP=$HOME
 export AFS=/afs/cs.stanford.edu/u/brando9
@@ -47,8 +47,8 @@ fi
 #module load gcc/9.2.0
 #module load cuda-toolkit/10.2
 #module load cuda-toolkit/11.1
-#source cuda11.1
-#sh cuda11.1
+source cuda11.1
+sh cuda11.1
 source cuda11.7
 export PATH=/usr/local/cuda-11.7/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda-11.7/lib64:$LD_LIBRARY_PATH
@@ -58,20 +58,15 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 export PATH="$HOME/.ruby-build/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
-export PATH=$PATH:$HOME/my_bins
 
-# - conda, todo: move to miniconda
-#export PATH=$PATH:$HOME/my_bins
 #export PATH="$HOME/miniconda/bin:$PATH"
 #source ~/miniconda/bin/activate
 #conda activate metalearning_gpu
 
-# using this since dec 9 2022 lfs
 # ln -s file1 link1
-echo $HOME
 ln -s /dfs/scratch0/brando9/anaconda $HOME/anaconda
-export PATH="$HOME/anaconda/bin:$PATH"
-source ~/anaconda/bin/activate
+export PATH="$DFS/anaconda/bin:$PATH"
+source $DFS/anaconda/bin/activate
 # conda activate metalearning_gpu
 conda activate iit_synthesis
 
@@ -80,11 +75,14 @@ export SU_PASSWORD=secret
 
 # opam configuration
 # test -r /dfs/scratch0/brando9/.opam/opam-init/init.sh && . /dfs/scratch0/brando9/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
-export PATH="$HOME/.local/bin:$PATH"
 eval $(opam env)
 #opam init --disable-sandboxing
 #opam update --all
-eval $(opam env)
+#eval $(opam env)
+
+export WANDB_DIR=$LOCAL_MACHINE_PWD
+
+#tr ':' '\n' <<< "$PATH"
 
 # - link git repos to local lfs
 # echo $HOME
