@@ -1,7 +1,7 @@
 # .bashrc
 
 # - use local machine as home
-export LOCAL_MACHINE_PWD=$(python -c "import socket;hostname=socket.gethostname().split('.')[0];print(f'/lfs/{hostname}/0/brando9');")
+export LOCAL_MACHINE_PWD=$(python3 -c "import socket;hostname=socket.gethostname().split('.')[0];print(f'/lfs/{hostname}/0/brando9');")
 mkdir -p $LOCAL_MACHINE_PWD
 export WANDB_DIR=$LOCAL_MACHINE_PWD
 export HOME=$LOCAL_MACHINE_PWD
