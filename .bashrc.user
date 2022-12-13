@@ -1,13 +1,12 @@
 # .bashrc
 
-# - use local machine as home, can't start with cd because like in .bashrc.user since we need to figure out local path in lfs
+# SNAP
 #export HOSTNAME=$(hostname)
 #export LOCAL_MACHINE_PWD="/lfs/${HOSTNAME::-13}/0/brando9"
 export LOCAL_MACHINE_PWD=$(python3 -c "import socket;hostname=socket.gethostname().split('.')[0];print(f'/lfs/{hostname}/0/brando9');")
-mkdir -p $LOCAL_MACHINE_PWD
 
-export HOME=$LOCAL_MACHINE_PWD
-cd $HOME
+cd /dfs/scratch0/brando9
+export HOME=/dfs/scratch0/brando9
 export TEMP=$HOME
 export AFS=/afs/cs.stanford.edu/u/brando9
 export DFS=/dfs/scratch0/brando9/
@@ -53,24 +52,19 @@ source cuda11.7
 export PATH=/usr/local/cuda-11.7/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda-11.7/lib64:$LD_LIBRARY_PATH
 
-# - set up rbenv, ruby-build, & ruby
+# SNAP
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 export PATH="$HOME/.ruby-build/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
-#export PATH=$PATH:$HOME/my_bins
 #export PATH="$HOME/miniconda/bin:$PATH"
 #source ~/miniconda/bin/activate
 #conda activate metalearning_gpu
 
-# using this since dec 9 2022 lfs
-# ln -s file1 link1
-ln -s /dfs/scratch0/brando9/anaconda $HOME/anaconda
 export PATH="$HOME/anaconda/bin:$PATH"
 source ~/anaconda/bin/activate
-# conda activate metalearning_gpu
-conda activate iit_synthesis
+conda activate metalearning_gpu
 
 export WANDB_API_KEY=secret
 export SU_PASSWORD=secret
@@ -85,12 +79,3 @@ eval $(opam env)
 export WANDB_DIR=$LOCAL_MACHINE_PWD
 
 #tr ':' '\n' <<< "$PATH"
-
-# - link git repos to local lfs
-# echo $HOME
-ln -s /afs/cs.stanford.edu/u/brando9/ultimate-utils $HOME/ultimate-utils
-ln -s /afs/cs.stanford.edu/u/brando9/diversity-for-predictive-success-of-meta-learning $HOME/diversity-for-predictive-success-of-meta-learning
-ln -s /afs/cs.stanford.edu/u/brando9/pycoq $HOME/pycoq
-ln -s /afs/cs.stanford.edu/u/brando9/iit-term-synthesis $HOME/iit-term-synthesis
-ln -s /dfs/scratch0/brando9/data $HOME/data
-ln -s /afs/cs.stanford.edu/u/brando9/proverbot9001 $HOME/proverbot9001
