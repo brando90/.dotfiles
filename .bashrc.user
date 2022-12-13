@@ -3,7 +3,7 @@
 # - use local machine as home, can't start with cd because like in .bashrc.user since we need to figure out local path in lfs
 #export HOSTNAME=$(hostname)
 #export LOCAL_MACHINE_PWD="/lfs/${HOSTNAME::-13}/0/brando9"
-export LOCAL_MACHINE_PWD=$(python -c "import socket;hostname=socket.gethostname().split('.')[0];print(f'/lfs/{hostname}/0/brando9');")
+export LOCAL_MACHINE_PWD=$(python3 -c "import socket;hostname=socket.gethostname().split('.')[0];print(f'/lfs/{hostname}/0/brando9');")
 mkdir -p $LOCAL_MACHINE_PWD
 
 export HOME=$LOCAL_MACHINE_PWD
