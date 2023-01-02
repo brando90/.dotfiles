@@ -1,3 +1,3 @@
 # - source the setup you want to have for snap
-#sh /afs/cs.stanford.edu/u/brando9/.bashrc.dfs
-sh /afs/cs.stanford.edu/u/brando9/.bashrc.lfs
+#source /afs/cs.stanford.edu/u/brando9/.bashrc.dfs
+source /afs/cs.stanford.edu/u/brando9/.bashrc.lfs
