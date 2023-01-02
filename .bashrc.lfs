@@ -1,6 +1,7 @@
 # .bashrc
+# https://unix.stackexchange.com/questions/728040/why-is-my-ln-command-trying-to-create-a-sym-link-with-a-duplicate-name
 
-# - use local machine as home
+# - use local machine as home, can't start with cd because like in .bashrc.user since we need to figure out local path in lfs
 export LOCAL_MACHINE_PWD=$(python -c "import socket;hostname=socket.gethostname().split('.')[0];print(f'/lfs/{hostname}/0/brando9');")
 mkdir -p $LOCAL_MACHINE_PWD
 export WANDB_DIR=$LOCAL_MACHINE_PWD
@@ -59,15 +60,14 @@ eval "$(rbenv init -)"
 export PATH="$HOME/.ruby-build/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
-# - conda, todo: move to miniconda
+# - conda, todo: move to miniconda & have it be $HOME so local lfs home
 #export PATH=$PATH:$HOME/my_bins
 #export PATH="$HOME/miniconda/bin:$PATH"
 #source ~/miniconda/bin/activate
 #conda activate metalearning_gpu
 
-# using this since dec 9 2022 lfs
+# using this since dec 9 2022 lfs, full anaconda @ dfs (want to move to lfs since it's faster, dfs is to slow, even just for installing stuff)
 # ln -s file1 link1
-echo $HOME
 ln -s /dfs/scratch0/brando9/anaconda $HOME/anaconda
 export PATH="$DFS/anaconda/bin:$PATH"
 source $DFS/anaconda/bin/activate
