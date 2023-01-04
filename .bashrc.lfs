@@ -84,7 +84,7 @@ eval $(opam env)
 #opam update --all
 #eval $(opam env)
 
-# - link git repos to local lfs
+# - link git repos to local lfs. ref: https://unix.stackexchange.com/questions/728040/why-is-my-ln-command-trying-to-create-a-sym-link-with-a-duplicate-name
 # echo $HOME
 # ln -s file1 link1
 ln -s /afs/cs.stanford.edu/u/brando9/ultimate-utils $HOME
@@ -94,3 +94,11 @@ ln -s /afs/cs.stanford.edu/u/brando9/iit-term-synthesis $HOME
 # ln -s /dfs/scratch0/brando9/data $HOME
 mkdir -p $HOME/data
 ln -s /afs/cs.stanford.edu/u/brando9/proverbot9001 $HOME
+
+# - mds
+mkdir -p $HOME/data/mds
+export MDS_DATA_PATH=$HOME/data/mds
+mkdir -p $MDS_DATA_PATH/records
+mkdir -p $MDS_DATA_PATH/splits
+export RECORDS=$MDS_DATA_PATH/records
+export SPLITS=$MDS_DATA_PATH/splits
