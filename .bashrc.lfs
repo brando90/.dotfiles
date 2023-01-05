@@ -63,20 +63,21 @@ export PATH="$HOME/.local/bin:$PATH"
 # - conda, todo: move to miniconda & have it be $HOME so local lfs home
 export PATH="$HOME/miniconda/bin:$PATH"
 source $HOME/miniconda/bin/activate
-conda activate metalearning_gpu
+#conda activate metalearning_gpu
 #conda activate iit_synthesis
 #conda activate mds_env_gpu
 
 # using this since dec 9 2022 lfs, full anaconda @ dfs (want to move to lfs since it's faster, dfs is to slow, even just for installing stuff)
-## ln -s file1 link1
+# ln -s file1 link1
 #ln -s /dfs/scratch0/brando9/anaconda $HOME/anaconda
 #export PATH="$DFS/anaconda/bin:$PATH"
 #source $DFS/anaconda/bin/activate
-# conda activate metalearning_gpu
+#conda activate metalearning_gpu
 #conda activate iit_synthesis
+#conda activate mds_env_gpu
 
-export WANDB_API_KEY=secret
-export SU_PASSWORD=secret
+export WANDB_API_KEY=s
+export SU_PASSWORD=s
 
 # opam configuration
 # test -r /dfs/scratch0/brando9/.opam/opam-init/init.sh && . /dfs/scratch0/brando9/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
