@@ -1,4 +1,9 @@
 # .bashrc
+ulimit -n 120000
+# check soft limit, output 120_000
+#ulimit -Sn
+# check hard limit, output 120_000
+#ulimit -Hn
 
 # SNAP
 #export HOSTNAME=$(hostname)
