@@ -7,7 +7,8 @@ ulimit -n 120000
 #ulimit -Hn
 
 # - use local machine as home, can't start with cd because like in .bashrc.user since we need to figure out local path in lfs
-export LOCAL_MACHINE_PWD=$(python3 -c "import socket;hostname=socket.gethostname().split('.')[0];print(f'/lfs/{hostname}/0/brando9');")
+# export LOCAL_MACHINE_PWD=$(python3 -c "import socket;hostname=socket.gethostname().split('.')[0];print(f'/lfs/{hostname}/0/brando9');")
+export LOCAL_MACHINE_PWD=$(python3 -c "import socket;hostname=socket.gethostname().split('.')[0];print('/lfs/'+str(hostname)+'/0/brando9');")
 mkdir -p $LOCAL_MACHINE_PWD
 export WANDB_DIR=$LOCAL_MACHINE_PWD
 export HOME=$LOCAL_MACHINE_PWD
