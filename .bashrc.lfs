@@ -7,7 +7,7 @@ ulimit -n 120000
 #ulimit -Hn
 
 # - use local machine as home, can't start with cd because like in .bashrc.user since we need to figure out local path in lfs
-# export LOCAL_MACHINE_PWD=$(python3 -c "import socket;hostname=socket.gethostname().split('.')[0];print(f'/lfs/{hostname}/0/brando9');")
+#export LOCAL_MACHINE_PWD=$(python3 -c "import socket;hostname=socket.gethostname().split('.')[0];print(f'/lfs/{hostname}/0/brando9');")
 export LOCAL_MACHINE_PWD=$(python3 -c "import socket;hostname=socket.gethostname().split('.')[0];print('/lfs/'+str(hostname)+'/0/brando9');")
 mkdir -p $LOCAL_MACHINE_PWD
 export WANDB_DIR=$LOCAL_MACHINE_PWD
@@ -72,8 +72,10 @@ source $HOME/miniconda/bin/activate
 #conda activate metalearning_gpu
 #conda activate iit_synthesis
 #conda activate mds_env_gpu
+conda activate data_quality
+#conda activate maf
 
-# using this since dec 9 2022 lfs, full anaconda @ dfs (want to move to lfs since it's faster, dfs is to slow, even just for installing stuff)
+# legacy
 # ln -s file1 link1
 #ln -s /dfs/scratch0/brando9/anaconda $HOME/anaconda
 #export PATH="$DFS/anaconda/bin:$PATH"
@@ -82,8 +84,8 @@ source $HOME/miniconda/bin/activate
 #conda activate iit_synthesis
 #conda activate mds_env_gpu
 
-export WANDB_API_KEY=s
-export SU_PASSWORD=s
+export WANDB_API_KEY=haha
+export SU_PASSWORD=""
 
 # opam configuration
 # test -r /dfs/scratch0/brando9/.opam/opam-init/init.sh && . /dfs/scratch0/brando9/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
@@ -103,6 +105,7 @@ ln -s /afs/cs.stanford.edu/u/brando9/pycoq $HOME/pycoq
 ln -s /afs/cs.stanford.edu/u/brando9/iit-term-synthesis $HOME/iit-term-synthesis
 #ln -s /dfs/scratch0/brando9/data $HOME/data
 ln -s /afs/cs.stanford.edu/u/brando9/proverbot9001 $HOME/proverbot9001
+ln -s /afs/cs.stanford.edu/u/brando9/ultimate-pycoq $HOME/ultimate-pycoq
 
 # - mds
 mkdir -p $HOME/data/mds
@@ -111,3 +114,7 @@ mkdir -p $MDS_DATA_PATH/records
 mkdir -p $MDS_DATA_PATH/splits
 export RECORDS=$MDS_DATA_PATH/records
 export SPLITS=$MDS_DATA_PATH/splits
+
+#
+# some default gpu
+export CUDA_VISIBLE_DEVICES=5
