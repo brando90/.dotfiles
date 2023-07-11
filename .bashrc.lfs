@@ -106,6 +106,7 @@ ln -s /afs/cs.stanford.edu/u/brando9/iit-term-synthesis $HOME/iit-term-synthesis
 #ln -s /dfs/scratch0/brando9/data $HOME/data
 ln -s /afs/cs.stanford.edu/u/brando9/proverbot9001 $HOME/proverbot9001
 ln -s /afs/cs.stanford.edu/u/brando9/ultimate-pycoq $HOME/ultimate-pycoq
+ln -s /afs/cs.stanford.edu/u/brando9/the-data-quality-edge-for-top-llms $HOME/the-data-quality-edge-for-top-llms
 
 # - mds
 mkdir -p $HOME/data/mds
