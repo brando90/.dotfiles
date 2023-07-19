@@ -119,7 +119,7 @@ export RECORDS=$MDS_DATA_PATH/records
 export SPLITS=$MDS_DATA_PATH/splits
 
 # -- some default GPU
-LEAST_GPU_ID=$(nvidia-smi --query-gpu=memory.used --format=csv,nounits,noheader | awk '{print NR-1 " " $1}' | sort -nk2 | head -n1 | cut -d' ' -f1)
+export LEAST_GPU_ID=$(nvidia-smi --query-gpu=memory.used --format=csv,nounits,noheader | awk '{print NR-1 " " $1}' | sort -nk2 | head -n1 | cut -d' ' -f1)
 export CUDA_VISIBLE_DEVICES=$LEAST_GPU_ID
 echo $CUDA_VISIBLE_DEVICES
 #
