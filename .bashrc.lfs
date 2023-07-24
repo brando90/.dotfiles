@@ -74,8 +74,8 @@ source $HOME/miniconda/bin/activate
 #conda activate metalearning_gpu
 #conda activate iit_synthesis
 #conda activate mds_env_gpu
-conda activate data_quality
-#conda activate maf
+#conda activate data_quality
+conda activate maf
 
 # legacy
 # ln -s file1 link1
