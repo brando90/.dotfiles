@@ -1,3 +1,9 @@
+# renew kerberos ticket for snap
+if klist -s
+then
+    kinit -R
+fi
+
 # In my 2013 mac this seems to be needed (reset PATH to a new virgin one)
 PATH=/usr/bin:/bin:/usr/sbin:/sbin
 export PATH
