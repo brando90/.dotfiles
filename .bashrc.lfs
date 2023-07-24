@@ -110,6 +110,7 @@ ln -s /afs/cs.stanford.edu/u/brando9/proverbot9001 $HOME/proverbot9001
 ln -s /afs/cs.stanford.edu/u/brando9/ultimate-pycoq $HOME/ultimate-pycoq
 ln -s /afs/cs.stanford.edu/u/brando9/the-data-quality-edge-for-top-llms $HOME/the-data-quality-edge-for-top-llms
 ln -s /afs/cs.stanford.edu/u/brando9/.bashrc.lfs $HOME/.bashrc.lfs
+ln -s /afs/cs.stanford.edu/u/brando9/evaporate $HOME/evaporate
 
 # - mds
 mkdir -p $HOME/data/mds
