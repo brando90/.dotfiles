@@ -120,8 +120,10 @@ mkdir -p $MDS_DATA_PATH/splits
 export RECORDS=$MDS_DATA_PATH/records
 export SPLITS=$MDS_DATA_PATH/splits
 
-# -- some default GPU
+# -- some default gpu
+#export CUDA_VISIBLE_DEVICES=5
 export LEAST_GPU_ID=$(nvidia-smi --query-gpu=memory.used --format=csv,nounits,noheader | awk '{print NR-1 " " $1}' | sort -nk2 | head -n1 | cut -d' ' -f1)
+echo $LEAST_GPU_ID
 export CUDA_VISIBLE_DEVICES=$LEAST_GPU_ID
 echo $CUDA_VISIBLE_DEVICES
 
@@ -132,6 +134,3 @@ export keys_brando=$(cat ~/keys/openai_api_brandos_personal_key.txt)
 export keys_koyejolab=$(cat ~/keys/openai_api_key_brandos_koyejolab.txt)
 
 export keys=$keys_koyejolab
-#
-# some default gpu
-export CUDA_VISIBLE_DEVICES=5
