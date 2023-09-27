@@ -1,3 +1,5 @@
+#conda install: https://github.com/brando90/ultimate-utils/blob/master/sh_files_repo/download_and_install_conda.sh
+
 # .bashrc
 # todo, read to correct silly mistake: https://unix.stackexchange.com/questions/728040/why-is-my-ln-command-trying-to-create-a-sym-link-with-a-duplicate-name
 ulimit -n 120000
