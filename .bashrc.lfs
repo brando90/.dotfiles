@@ -42,9 +42,8 @@ WHITE='\e[1;37m'
 
 BACK_DEFAULT_COLOR='\e[m'
 
-# -- Prompt name
 HOST_PART='$(hostname | cut -d. -f1)'
-export PS1="\u@$HOST_PART\w\[$LIGHT_GREY\] \$ \[$LIGHT_CYAN\]"
+export PS1="\[$LIGHT_GREY\]\u@$HOST_PART\[$LIGHT_GREEN\]\w\[$LIGHT_GREY\] \$ \[$LIGHT_CYAN\]"
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
@@ -60,7 +59,7 @@ fi
 #module load cuda-toolkit/11.1
 #source cuda11.1
 #sh cuda11.1
-source cuda11.7
+#source cuda11.7
 export PATH=/usr/local/cuda-11.7/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda-11.7/lib64:$LD_LIBRARY_PATH
 
@@ -88,12 +87,12 @@ conda activate maf
 #conda activate iit_synthesis
 #conda activate mds_env_gpu
 
-export WANDB_API_KEY=haha
+export WANDB_API_KEY=xxx
 export SU_PASSWORD=""
 
 # opam configuration
 # test -r /dfs/scratch0/brando9/.opam/opam-init/init.sh && . /dfs/scratch0/brando9/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
-eval $(opam env)
+#eval $(opam env)
 #opam init --disable-sandboxing
 #opam update --all
 #eval $(opam env)
@@ -103,16 +102,54 @@ eval $(opam env)
 # - link git repos to local lfs. ref: https://unix.stackexchange.com/questions/728040/why-is-my-ln-command-trying-to-create-a-sym-link-with-a-duplicate-name
 # echo $HOME
 # ln -s file1 link1
-ln -s /afs/cs.stanford.edu/u/brando9/ultimate-utils $HOME/ultimate-utils
-ln -s /afs/cs.stanford.edu/u/brando9/diversity-for-predictive-success-of-meta-learning $HOME/diversity-for-predictive-success-of-meta-learning
-ln -s /afs/cs.stanford.edu/u/brando9/pycoq $HOME/pycoq
-ln -s /afs/cs.stanford.edu/u/brando9/iit-term-synthesis $HOME/iit-term-synthesis
-#ln -s /dfs/scratch0/brando9/data $HOME/data
-ln -s /afs/cs.stanford.edu/u/brando9/proverbot9001 $HOME/proverbot9001
-ln -s /afs/cs.stanford.edu/u/brando9/ultimate-pycoq $HOME/ultimate-pycoq
-ln -s /afs/cs.stanford.edu/u/brando9/the-data-quality-edge-for-top-llms $HOME/the-data-quality-edge-for-top-llms
-ln -s /afs/cs.stanford.edu/u/brando9/.bashrc.lfs $HOME/.bashrc.lfs
-ln -s /afs/cs.stanford.edu/u/brando9/evaporate $HOME/evaporate
+if [ ! -e "$HOME/ultimate-utils" ]; then
+  ln -s /afs/cs.stanford.edu/u/brando9/ultimate-utils $HOME/ultimate-utils
+fi
+
+if [ ! -e "$HOME/diversity-for-predictive-success-of-meta-learning" ]; then
+  ln -s /afs/cs.stanford.edu/u/brando9/diversity-for-predictive-success-of-meta-learning $HOME/diversity-for-predictive-success-of-meta-learning  
+fi
+
+if [ ! -e "$HOME/pycoq" ]; then
+  ln -s /afs/cs.stanford.edu/u/brando9/pycoq $HOME/pycoq
+fi
+
+if [ ! -e "$HOME/iit-term-synthesis" ]; then
+  ln -s /afs/cs.stanford.edu/u/brando9/iit-term-synthesis $HOME/iit-term-synthesis
+fi
+
+#if [ ! -e "$HOME/proverbot9001" ]; then
+#  ln -s /afs/cs.stanford.edu/u/brando9/proverbot9001 $HOME/proverbot9001
+#fi
+
+if [ ! -e "$HOME/ultimate-pycoq" ]; then
+  ln -s /afs/cs.stanford.edu/u/brando9/ultimate-pycoq $HOME/ultimate-pycoq  
+fi
+
+if [ ! -e "$HOME/massive-autoformalization-maf" ]; then
+  ln -s /afs/cs.stanford.edu/u/brando9/massive-autoformalization-maf $HOME/massive-autoformalization-maf
+fi
+
+if [ ! -e "$HOME/.bashrc.lfs" ]; then
+  ln -s /afs/cs.stanford.edu/u/brando9/.bashrc.lfs $HOME/.bashrc.lfs
+fi
+
+# bashrc.lfs to dfs, the one different one
+if [ ! -e "/dfs/scratch0/brando9/.bashrc.lfs" ]; then
+  ln -s /afs/cs.stanford.edu/u/brando9/.bashrc.lfs /dfs/scratch0/brando9/.bashrc.lfs
+fi
+
+if [ ! -e "$HOME/keys" ]; then
+  ln -s $AFS/keys ~/keys
+fi
+
+if [ ! -e "$HOME/beyond-scale-language-data-diversity" ]; then
+  ln -s $AFS/beyond-scale-language-data-diversity ~/beyond-scale-language-data-diversity
+fi
+
+if [ ! -e "$HOME/evals-for-autoformalization" ]; then
+  ln -s /afs/cs.stanford.edu/u/brando9/evals-for-autoformalization $HOME/evals-for-autoformalization
+fi
 
 # - mds
 mkdir -p $HOME/data/mds
@@ -125,12 +162,9 @@ export SPLITS=$MDS_DATA_PATH/splits
 # -- some default gpu
 #export CUDA_VISIBLE_DEVICES=5
 export LEAST_GPU_ID=$(nvidia-smi --query-gpu=memory.used --format=csv,nounits,noheader | awk '{print NR-1 " " $1}' | sort -nk2 | head -n1 | cut -d' ' -f1)
-echo $LEAST_GPU_ID
 export CUDA_VISIBLE_DEVICES=$LEAST_GPU_ID
-echo $CUDA_VISIBLE_DEVICES
 
 # -- keys
-ln -s $AFS/keys ~/keys
 
 export keys_brando=$(cat ~/keys/openai_api_brandos_personal_key.txt)
 export keys_koyejolab=$(cat ~/keys/openai_api_key_brandos_koyejolab.txt)
