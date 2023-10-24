@@ -130,6 +130,10 @@ if [ ! -e "$HOME/massive-autoformalization-maf" ]; then
   ln -s /afs/cs.stanford.edu/u/brando9/massive-autoformalization-maf $HOME/massive-autoformalization-maf
 fi
 
+if [ ! -e "$HOME/.bashrc.user" ]; then
+  ln -s /afs/cs.stanford.edu/u/brando9/.bashrc.user $HOME/.bashrc.user
+fi
+
 if [ ! -e "$HOME/.bashrc.lfs" ]; then
   ln -s /afs/cs.stanford.edu/u/brando9/.bashrc.lfs $HOME/.bashrc.lfs
 fi
