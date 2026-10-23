@@ -1,4 +1,10 @@
-# Brando's dotfiles
+# Brando's dotfiles — archived
+
+**Doc link:** <https://github.com/brando90/.dotfiles/blob/master/README.md>
+
+**TLDR:** Migrated on 10-23-2026 to [agents-config/dotfiles](https://github.com/brando90/agents-config/blob/main/dotfiles/README.md). This repository is a read-only history archive; make all new dotfile and shortcut changes in agents-config.
+
+All 14 original tracked files are preserved byte-for-byte under [dotfiles/legacy](https://github.com/brando90/agents-config/tree/main/dotfiles/legacy), with [source revision and checksums](https://github.com/brando90/agents-config/blob/main/dotfiles/legacy-manifest.json). The original README follows below.
 
 ## Install
 
